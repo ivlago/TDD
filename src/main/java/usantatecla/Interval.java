@@ -1,5 +1,7 @@
 package usantatecla;
 
+import java.util.function.BooleanSupplier;
+
 public class Interval {
 
 	private Min min;
@@ -49,6 +51,10 @@ public class Interval {
 	@Override
 	public String toString() {
 		return this.min.toString() + ", " + max.toString();
-	}	
+	}
+
+    public Boolean intersect(Interval interval) {
+        return true;
+    }	
 
 }
