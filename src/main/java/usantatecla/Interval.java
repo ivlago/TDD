@@ -52,6 +52,8 @@ public class Interval {
 	}
 
     public boolean intersect(Interval interval) {
-		return(interval.min.isWithin(this.max.value) && this.min.isWithin(interval.max.value));
+		boolean isMin2InMax1 = interval.min.isWithin(this.max.value);
+		boolean isMax2InMin1 = this.min.isWithin(interval.max.value);
+		return(isMin2InMax1 && isMax2InMin1);
 	}
 }
