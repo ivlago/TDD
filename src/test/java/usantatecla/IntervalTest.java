@@ -109,7 +109,7 @@ public class IntervalTest {
   }
 
   @Test
-  public void givenIntervaOpenClosewhenIntersectWithIntervalClosedOpenThenTrue() {
+  public void givenIntervaOpenClosedwhenIntersectWithIntervalClosedOpenThenTrue() {
     Interval interval3 = this.intervalBuilder3.open(left3.getEquals()).closed(right3.getEquals()).build();
     Interval interval4 = this.intervalBuilder4.closed(left4.getEquals()).open(right4.getEquals()).build();
     
