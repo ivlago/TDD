@@ -1,7 +1,5 @@
 package usantatecla;
 
-import java.util.function.BooleanSupplier;
-
 public class Interval {
 
 	private Min min;

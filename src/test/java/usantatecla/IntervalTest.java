@@ -14,10 +14,13 @@ public class IntervalTest {
   private Point right2 = new Point(5.0);
   private Point left3 = new Point(7.8);
   private Point right3 = new Point(10.6);
+  private Point left4 = new Point(10.6);
+  private Point right4 = new Point(12.4);
 
   private IntervalBuilder intervalBuilder;
   private IntervalBuilder intervalBuilder2;
   private IntervalBuilder intervalBuilder3;
+  private IntervalBuilder intervalBuilder4;
 
   @BeforeEach
   public void before(){
@@ -30,7 +33,9 @@ public class IntervalTest {
     this.left3 = new Point(7.8);
     this.right3 = new Point(10.6);
     this.intervalBuilder3 = new IntervalBuilder();
-  }
+    this.left4 = new Point(10.6);
+    this.right4 = new Point(12.4);
+    this.intervalBuilder4 = new IntervalBuilder(); }
 
   @Test
   public void givenIntervaOpenOpenlwhenIncludeWithIncludedValueThenTrue() {
@@ -93,5 +98,13 @@ public class IntervalTest {
     Interval interval3 = this.intervalBuilder3.open(left3.getEquals()).open(right3.getEquals()).build();
     
     assertFalse(interval1.intersect(interval3));
+  }
+
+  @Test
+  public void givenIntervaOpenClosewhenIntersectWithIntervalOpenOpenThenFalse() {
+    Interval interval3 = this.intervalBuilder3.open(left3.getEquals()).closed(right3.getEquals()).build();
+    Interval interval4 = this.intervalBuilder4.open(left4.getEquals()).open(right4.getEquals()).build();
+    
+    assertFalse(interval3.intersect(interval4));
   }
 }
