@@ -54,8 +54,6 @@ public class Interval {
 	}
 
     public boolean intersect(Interval interval) {
-		return true;
-        //return interval.max.isWithin(this.max.value);
-    }	
-
+		return(interval.min.isWithin(this.max.value));
+	}
 }
