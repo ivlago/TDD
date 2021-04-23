@@ -113,7 +113,7 @@ public class IntervalTest {
     Interval interval3 = this.intervalBuilder3.open(left3.getEquals()).closed(right3.getEquals()).build();
     Interval interval4 = this.intervalBuilder4.closed(left4.getEquals()).open(right4.getEquals()).build();
     
-    assertTrue(interval3.intersect(interval4));
+    assertTrue(interval4.intersect(interval3));
   }
 
   @Test
@@ -122,5 +122,13 @@ public class IntervalTest {
     Interval interval4 = this.intervalBuilder4.closed(left4.getEquals()).open(right4.getEquals()).build();
     
     assertFalse(interval4.intersect(interval2));
+  }
+
+  @Test
+  public void givenIntervaClosedClosedwhenIntersectWithIntervalClosedCloseThenTrue() {
+    Interval interval1 = this.intervalBuilder.closed(left1.getEquals()).closed(right1.getEquals()).build();
+    Interval interval2 = this.intervalBuilder2.closed(left2.getEquals()).closed(right2.getEquals()).build();
+    
+    assertTrue(interval2.intersect(interval1));
   }
 }
